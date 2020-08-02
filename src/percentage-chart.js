@@ -13,26 +13,25 @@ const keyframes =
  }
 }`;
 const PercentageChart = (props) => {
-  const val = props.percent ? `${val},100` : '70,100'
+  const val = props.percent ? `${props.percent},100` : '0,100'
   const circleRef = useRef(null)
-  const size = 200
-  const strokeWidth = 1
+
 
   return (
-    <div className="grid">
+    <div>
       <style>{keyframes}</style>
      <svg 
-       viewBox="0 0 33.83098862 33.83098862" 
-       width={size}
-       height={size}
-       xmlns="http://www.w3.org/2000/svg">
+       viewBox='0 0 33.83098862 33.83098862'
+       width={props.size}
+       height={props.size}
+       xmlns='http://www.w3.org/2000/svg'>
       <circle 
-         stroke="#efefef" 
-         strokeWidth={strokeWidth}
+         stroke='#efefef'
+         strokeWidth={props.strokeWidth}
          fill="none" 
-         cx="16.91549431" 
-         cy="16.91549431" 
-         r="15.91549431" />
+         cx='16.91549431'
+         cy='16.91549431'
+         r='15.91549431' />
       <circle 
         ref={circleRef}
         style={{
@@ -40,30 +39,31 @@ const PercentageChart = (props) => {
           transform: 'rotate(-90deg)',
           transformOrigin: 'center'
         }}
-        stroke="#00acc1" 
-        strokeWidth={strokeWidth}
+        stroke={props.color}
+        strokeWidth={props.strokeWidth}
         strokeDasharray={val}
-        strokeLinecap="round"
-        fill="none" 
-        cx="16.91549431" 
-        cy="16.91549431" 
-        r="15.91549431" />
+        strokeLinecap='round'
+        fill='none'
+        cx='16.91549431'
+        cy='16.91549431'
+        r='15.91549431' />
       <g style={{
-      animation: 'circle-chart-appear 2s forwards',
-      opacity: 0,
-      transform: 'translateY(0.3em)'}}>
+        animation: 'circle-chart-appear 2s forwards',
+        opacity: 0,
+        transform: 'translateY(0.3em)'}}>
         <text 
-           x="16.91549431" 
-           y="15.5" 
-           alignmentBaseline="central" 
-           textAnchor="middle" 
-           fontSize="8">30%</text>
-        <text 
-         x="16.91549431" 
-         y="20.5" 
-         alignmentBaseline="central" 
-         textAnchor="middle" 
-         fontSize="2">Yay 30% progress!</text>
+           x='16.91549431'
+           y='15.5' 
+           alignmentBaseline='central' 
+           textAnchor='middle'
+           fontSize='8'>{props.percent}%</text>
+       { props.subTitle && <text 
+         x='16.91549431'
+         y='20.5'
+         alignmentBaseline='central'
+         textAnchor='middle'
+         fontSize='2'>{props.subTitle}</text>
+       }
       </g>
     </svg> 
     </div>
@@ -76,6 +76,12 @@ PercentageChart.propTypes = {
   size: PropTypes.Number,
   strokeWidth: PropTypes.Number,
   color: PropTypes.String
+}
+PercentageChart.defaultProps = {
+  percent: 0,
+  size: 200,
+  strokeWidth: 1,
+  color: '#00acc1'
 }
 
 export default PercentageChart

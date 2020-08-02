@@ -1,6 +1,11 @@
 import React from 'react'
-import styles from './styles.module.css'
+ import PercentageChart from './percentage-chart'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const ExampleComponent = () => {
+  return (<div style={{display:'flex', padding:'20px', justifyContent:'center', width:'100%'}}>
+  <PercentageChart
+  percent={70}
+  subTitle='sub-title here'
+  /> 
+  </div>)
 }
