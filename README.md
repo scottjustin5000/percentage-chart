@@ -2,29 +2,27 @@
 
 > circular percentage chart
 
-[![NPM](https://img.shields.io/npm/v/percentage-chart.svg)](https://www.npmjs.com/package/percentage-chart) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
-## Install
-
-```bash
-npm install --save percentage-chart
-```
+ simple circular percentage chart
+ 
+ [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'percentage-chart'
-import 'percentage-chart/dist/index.css'
+import PercentageChart from 'percentage-chart'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <PercentageChart
+    percent={70}
+    size={200}
+    color='#00acc1'
+    strokeWidth={1}
+    subTilte='some subtitle'
+    />
   }
 }
 ```
 
-## License
-
-MIT © [scottjustin5000](https://github.com/scottjustin5000)
