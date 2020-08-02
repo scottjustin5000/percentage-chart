@@ -71,11 +71,11 @@ const PercentageChart = (props) => {
 }
 
 PercentageChart.propTypes = {
-  percent: PropTypes.Number,
-  subTitle: PropTypes.String,
-  size: PropTypes.Number,
-  strokeWidth: PropTypes.Number,
-  color: PropTypes.String
+  percent: PropTypes.number,
+  subTitle: PropTypes.string,
+  size: PropTypes.number,
+  strokeWidth: PropTypes.number,
+  color: PropTypes.string
 }
 PercentageChart.defaultProps = {
   percent: 0,
