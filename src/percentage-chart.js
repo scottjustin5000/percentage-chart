@@ -14,8 +14,6 @@ const keyframes =
 }`;
 const PercentageChart = (props) => {
   const val = props.percent ? `${props.percent},100` : '0,100'
-  const circleRef = useRef(null)
-
 
   return (
     <div>
@@ -33,7 +31,6 @@ const PercentageChart = (props) => {
          cy='16.91549431'
          r='15.91549431' />
       <circle 
-        ref={circleRef}
         style={{
           animation: 'circle-chart-fill 2s reverse',
           transform: 'rotate(-90deg)',
